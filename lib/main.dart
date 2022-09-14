@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_digikala_ui_application/screens/home_screen.dart';
 
 void main() {
-  runApp(Application());
+  runApp(const Application());
 }
 
 class Application extends StatelessWidget {
@@ -10,8 +10,15 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //var textDirection;
     return MaterialApp(
-      home: HomeScreen(),
+      title: 'Digikala',
+      debugShowCheckedModeBanner: false,
+      locale: Locale("fa"),
+      home: Directionality(
+        textDirection: TextDirection.rtl,
+        child: HomeScreen(),
+      ),
     );
   }
 }
